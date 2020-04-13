@@ -13,6 +13,7 @@ from lib.parameter_substitution import parameter_num
 from conf.settings import *
 from lib.logger import logger
 from lib.global_variables import gv
+from lib.tqgetdata import get_last_price
 
 
 def assert_res(assertRes, res):
@@ -28,17 +29,15 @@ def assert_res(assertRes, res):
                 logger.logger.debug("当前获得的期货代码数据是：{}".format(actual_expr))
             actual = jsonpath.jsonpath(json.loads(res), actual_expr)[0]
             expect = i_.split("=")[1].split("|")
-            if isinstance(actual, list):
-                """判断当前的数据列表是否为空"""
-                if len(actual) <= int(expect[0]):
-                    res_status = "nodata"
-                    logger.logger.debug("当前数据返回为空，请注意线上数据")
-                    return res_status
-                else:
-                    res_status = "pass"
-                    return res_status
             for j in expect:
-                if str(actual) == j:
+                parameter = re.findall(PATTERN, j)
+                if parameter:
+                    code = str(gv.getVar("exg")+'.'+gv.getVar("code"))
+                    get_last_price(code)
+                    value = gv.getVar(parameter[0])
+                    if actual != value:
+                        res_status = "fail"
+                elif str(actual) == j:
                     res_status = "pass"
                     break
                 elif str(actual) != str(j):
