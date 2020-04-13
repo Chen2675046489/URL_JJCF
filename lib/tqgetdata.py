@@ -13,11 +13,10 @@ def get_last_price(code):
     # 输出 cu2003 的最新行情时间和最新价
     last_price = quote.last_price
     # 关闭api,释放资源
-    print(type(last_price))
     api.close()
 
     gv.setVar("last_price", last_price)
 
 
 if __name__ == '__main__':
-    get_last_price("SHFE.cu2003")
+    get_last_price("CZCE.AP005")

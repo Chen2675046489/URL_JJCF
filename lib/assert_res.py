@@ -35,7 +35,9 @@ def assert_res(assertRes, res):
                     code = str(gv.getVar("exg")+'.'+gv.getVar("code"))
                     get_last_price(code)
                     value = gv.getVar(parameter[0])
-                    if actual != value:
+                    if actual == value:
+                        res_status = "pass"
+                    elif actual != value:
                         res_status = "fail"
                 elif str(actual) == j:
                     res_status = "pass"
