@@ -16,6 +16,7 @@ def get_last_price(code):
     api.close()
 
     gv.setVar("last_price", last_price)
+    print(last_price)
 
 
 if __name__ == '__main__':

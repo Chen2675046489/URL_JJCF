@@ -13,7 +13,6 @@ from lib.parameter_substitution import parameter_num
 from conf.settings import *
 from lib.logger import logger
 from lib.global_variables import gv
-from lib.tqgetdata import get_last_price
 
 
 def assert_res(assertRes, res):
@@ -30,16 +29,7 @@ def assert_res(assertRes, res):
             actual = jsonpath.jsonpath(json.loads(res), actual_expr)[0]
             expect = i_.split("=")[1].split("|")
             for j in expect:
-                parameter = re.findall(PATTERN, j)
-                if parameter:
-                    code = str(gv.getVar("exg")+'.'+gv.getVar("code"))
-                    get_last_price(code)
-                    value = gv.getVar(parameter[0])
-                    if actual == value:
-                        res_status = "pass"
-                    elif actual != value:
-                        res_status = "fail"
-                elif str(actual) == j:
+                if str(actual) == j:
                     res_status = "pass"
                     break
                 elif str(actual) != str(j):

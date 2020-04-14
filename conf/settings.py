@@ -48,11 +48,11 @@ PROJECT_IP2 = 'stock.jiangjuncj.com'
 PROJECT_IP3 = 'new.jiangjuncj.com'
 
 # mysql数据库的连接信息
-MYSQL_HOST = ''
-MYSQL_PORT = 3806
-MYSQL_DB_USER = 'root'
-MYSQL_DB_PASSWORD = ''
-MYSQL_DB_NAME = 'qzcsbj'
+MYSQL_HOST = '192.168.10.240'
+MYSQL_PORT = 3307
+MYSQL_DB_USER = 'mq-backs'
+MYSQL_DB_PASSWORD = 'bs-24625'
+MYSQL_DB_NAME = 'backs-test'
 
 # redis数据库的连接信息
 # r = redis.Redis(host='127.0.0.1',port=6379,db=0,password='qzcsbj@redis666')
