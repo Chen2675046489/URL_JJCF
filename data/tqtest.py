@@ -21,7 +21,7 @@ while True:
 
         body = {"futureCode": "sn2007"}
         headers = {"Content-Type": "application/json;charset=UTF-8"}
-        time.sleep(0.1)
+        time.sleep(0.5)
         res = requests.post(url="http://192.168.10.242:8082/futures/average/queryNewSharingData",
                             json=body, headers=headers, timeout=10)
         formula = "$.model.data[-1:].trade"
@@ -33,5 +33,3 @@ while True:
         else:
             print("数据匹配不对，请注意！")
 
-if __name__ == '__main__':
-    get_data()

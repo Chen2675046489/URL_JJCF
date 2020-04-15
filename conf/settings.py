@@ -56,15 +56,10 @@ MYSQL_DB_NAME = 'backs-test'
 
 # redis数据库的连接信息
 # r = redis.Redis(host='127.0.0.1',port=6379,db=0,password='qzcsbj@redis666')
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = '192.168.10.243'
 REDIS_PORT = 6379
-REDIS_DB = 0
-REDIS_PASSWORD = 'qzcsbj@redis666'
+REDIS_PASSWORD = 'tech.rd33'
 
-# print(BASE_PATH)
-# print(TESTCASE_PATH)
-# print(REPORT_PATH)
-# print(LOG_PATH)
 
 # 参数替换，获取key
 PATTERN = '\$\{(.*?)\}'
