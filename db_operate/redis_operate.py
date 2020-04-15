@@ -38,6 +38,6 @@ class RedisOperate:
 
 
 if __name__ == '__main__':
-    print(RedisOperate().set_key("d", "c"))
+    print(RedisOperate().set_key("g", "c", ex=6, nx=True))
 
 
