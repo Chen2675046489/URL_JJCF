@@ -61,10 +61,8 @@ class MyRequest(unittest.TestCase):
                     logger.logger.debug("断言结果是：%s\n\n" % res_status)
                     if res_status == "pass":
                         Write(row=int(case_num), col=Result, value="pass")
-                        Write(row=int(case_num))
                     elif res_status != "pass":
                         Write(row=int(case_num), value=res.text)
-                        Write(row=int(case_num), col=Result)
                     gv.res.append([res.text, url, headers, body, res_status])
                     self.assertEqual(res_status, "pass")
 
@@ -87,13 +85,10 @@ class MyRequest(unittest.TestCase):
                     logger.logger.debug("断言结果是：%s\n\n" % res_status)
                     if res_status == "pass":
                         Write(row=int(case_num), col=Result, value="pass")
-                        Write(int(case_num))
                     elif res_status == "fail":
                         Write(row=int(case_num), value=res.text)
-                        Write(row=int(case_num), col=Result)
                     elif res_status == "nodata":
                         Write(row=int(case_num), value="当前显示没有数据，请注意！{}".format(res.text))
-                        Write(row=int(case_num), col=Result)
                     gv.res.append([res.text, url, headers, params, body, res_status])
                     self.assertEqual(res_status, "pass")
 

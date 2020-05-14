@@ -69,6 +69,7 @@ ActualResults = 15
 # excel表中测试结果的列数
 Result = 16
 
+
 # 上个星期的日期
 yesterday = int(time.mktime(time.strptime(str(datetime.today().date() - timedelta(days=7)), '%Y-%m-%d'))*1000)
 # 当前的时间
