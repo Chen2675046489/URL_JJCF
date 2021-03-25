@@ -5,7 +5,7 @@ openpyxl==3.0.3
 pymongo==3.10.0
 PyMySQL==0.9.3
 python-dateutil==2.8.0
-PyYAML==5.1.1
+PyYAML==5.4
 redis==3.3.8
 requests==2.18.4
 xlrd==1.2.0
